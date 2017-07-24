@@ -1,56 +1,51 @@
 import React, { Component } from 'react';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
-import Typography from 'material-ui/Typography';
+import Table, { TableHead, TableCell, TableBody, TableRow,  } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
-
-const docsUrl = 'https://jsonplaceholder.typicode.com/photos';
+import TextField from 'material-ui/TextField';
+import Reactable from 'reactable';
 
 class DocumentList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
-  }
-
-  getInitialState() {
-    return {
-      documents: []
+    this.state = {
+      search: ''
     };
   }
 
-  componentDidMount(){
-     fetch(docsUrl)
-      .then(d => d.json())
-      .then(d => {
-        this.setState({
-          documents: d
-        })
-      }) 
-  }
+  updateSearch(event) {
+		this.setState({ search : event.target.value })
+	}
 
   render() {
-
-    if (!this.state.documents) return <p> Loading... </p>
+    let filteredDocuments = this.props.documents.filter(
+      (document) => {
+        return document.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+      }
+    )
+    if (!this.props.documents) return <p> Loading... </p>
     return (
-      <div style={styles.root}>
-
-      
-
-       	<Typography type="display1" gutterBottom>
-  
-        Documents
-        </Typography>
+      <div style={styles.root}> 
+         <TextField
+          id="placeholder"
+          label="Search for a document"
+          fullWidth
+          margin="normal"
+          value={this.state.search} onChange={this.updateSearch.bind(this)}
+        />
         <Paper>
-         <Table>
+         <Table sortable={true}>
         <TableHead>
           <TableRow>
-            <TableCell>Document Name</TableCell>
+            <TableCell>
+                Document Name
+            </TableCell>
             <TableCell>Document ID</TableCell>
             <TableCell>Category ID</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-        	{this.state.documents.slice(0, 10).map(function(document) {
+        	{filteredDocuments.slice(0, 10).map(function(document) {
           return(
           		<TableRow key={document.id}>
           			<TableCell>

@@ -2,12 +2,11 @@ import React from 'react'
 import AppBar from 'material-ui/AppBar';
 import Typography from 'material-ui/Typography';
 
-
 const Header = () => (
   <AppBar position="static" color="default" style={styles.root}>
     <Typography type="title" color="inherit" style={styles.title}>
-            Document Management System
-          </Typography>
+      Document Management System
+    </Typography>
   </AppBar>
 );
 
