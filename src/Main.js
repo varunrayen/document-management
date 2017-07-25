@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import Header from './header/header';
-import DocumentList from './DocumentList/DocumentList';
-import Reactable from './Reactable';
-import Sorting from './Sorting';
+import DocumentSort from './DocumentSort';
 
 const docsUrl = 'https://jsonplaceholder.typicode.com/photos';
 
 class Main extends Component {
 	 constructor(props) {
     super(props);
-  
     this.state = {};
   }
 
@@ -36,8 +33,7 @@ class Main extends Component {
     return (
       <div>
          <Header />
-          <DocumentList documents={this.state.documents} />
-          <Sorting />
+          <DocumentSort documents={this.state.documents} />
       </div>
     );
   }
