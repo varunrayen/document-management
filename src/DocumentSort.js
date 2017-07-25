@@ -13,10 +13,8 @@ import Table, {
   TableRow,
   TableSortLabel,
 } from 'material-ui/Table';
-import Toolbar from 'material-ui/Toolbar';
 import Paper from 'material-ui/Paper';
 import Avatar from 'material-ui/Avatar';
-import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 
 const columnData = [
@@ -118,7 +116,7 @@ class EnhancedTable extends Component {
   
   render() {
     const classes = this.props.classes;
-    const { data, order, orderBy, selected } = this.state;
+    const { data, order, orderBy } = this.state;
     
     let filteredDocuments = data.filter(
       (document) => {

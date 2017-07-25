@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
-import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
 import './Main.css';
 
 import Header from './header/header';
 import DocumentSort from './DocumentSort';
 
-const docsUrl = 'https://jsonplaceholder.typicode.com/photos';
+//const docsUrl = 'https://jsonplaceholder.typicode.com/photos';
 const documentsUrl = 'http://localhost:3000/documents';
 
 class Main extends Component {
