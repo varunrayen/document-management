@@ -1,0 +1,15 @@
+{
+  "documents": [
+    { "id": 1, "title": "Registration Form", "category": "forms", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242c049407-210x274.png" },
+    { "id": 2, "title": "Implementing Design Principles", "category": "books", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242c049407-210x274.png" },
+    { "id": 3, "title": "Quarterly Review - 2017", "category": "reports", "icon": "https://cdn0.iconfinder.com/data/icons/flat-file-format/100/ppt-512.png" },
+    { "id": 4, "title": "Layouts", "category": "design", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242ad1c9e4.png" },
+    { "id": 5, "title": "Office - Blueprint", "category": "design", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242bcda25a.png" },
+    { "id": 6, "title": "Guidelines for New Hires", "category": "forms", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242c049407-210x274.png" },
+    { "id": 7, "title": "Registration Form", "category": "forms", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242c218cd9.png" },
+    { "id": 8, "title": "Annual Report - 2016", "category": "reports", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242c218cd9.png" },
+    { "id": 10, "title": "List of materials", "category": "forms", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242c218cd9.png" },
+    { "id": 11, "title": "Registration Form", "category": "forms", "icon": "http://www.iconsfind.com/wp-content/uploads/2015/12/20151205_566242c218cd9.png" },
+    { "id": 12, "title": "Invoice", "category": "invoices", "icon": "http://icons.iconarchive.com/icons/pelfusion/flat-file-type/512/zip-icon.png" }
+  ]
+}

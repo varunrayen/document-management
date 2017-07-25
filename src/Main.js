@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
+
+import Grid from 'material-ui/Grid';
+import Paper from 'material-ui/Paper';
+import './Main.css';
+
 import Header from './header/header';
 import DocumentSort from './DocumentSort';
 
 const docsUrl = 'https://jsonplaceholder.typicode.com/photos';
+const documentsUrl = 'http://localhost:3000/documents';
 
 class Main extends Component {
+ 
 	 constructor(props) {
     super(props);
+    
     this.state = {};
   }
+    
 
     getInitialState() {
     return {
@@ -17,7 +26,7 @@ class Main extends Component {
   }
 
   componentWillMount(){
-     fetch(docsUrl)
+     fetch(documentsUrl)
       .then(d => d.json())
       .then(d => {
         this.setState({
@@ -27,16 +36,18 @@ class Main extends Component {
   }
   
   render() {
+    
     if(this.state.documents === undefined){
       return null;
     }
     return (
-      <div>
+      <div className='root'>
          <Header />
           <DocumentSort documents={this.state.documents} />
       </div>
     );
   }
 }
+
 
 export default Main;

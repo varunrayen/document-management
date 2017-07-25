@@ -15,6 +15,9 @@ import Table, {
 } from 'material-ui/Table';
 import Toolbar from 'material-ui/Toolbar';
 import Paper from 'material-ui/Paper';
+import Avatar from 'material-ui/Avatar';
+import Button from 'material-ui/Button';
+import Typography from 'material-ui/Typography';
 
 const columnData = [
   { id: 'title', numeric: false, disablePadding: true, label: 'Document Title' },
@@ -70,6 +73,18 @@ const styleSheet = createStyleSheet('EnhancedTable', theme => ({
   },
   root: {
     margin: 20
+  },
+  row: {
+    display: 'flex',
+    justifyContent: 'left',
+    alignItems: 'center',
+  },
+  avatar: {
+    marginRight: 10
+  },
+  forms: {
+    backgroundColor: '#4A148C',
+    color: '#FFFFFF'
   }
 }));
 
@@ -104,7 +119,7 @@ class EnhancedTable extends Component {
   render() {
     const classes = this.props.classes;
     const { data, order, orderBy, selected } = this.state;
-
+    
     let filteredDocuments = data.filter(
       (document) => {
         return document.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
@@ -113,6 +128,9 @@ class EnhancedTable extends Component {
 
     return (
       <div className={classes.root}>
+        <Typography type="display1" gutterBottom>
+          Document Directory
+        </Typography>
         <TextField
           id="placeholder"
           label="Search for a document"
@@ -133,14 +151,17 @@ class EnhancedTable extends Component {
               return (
                 <TableRow
                   hover>
-                  <TableCell>
+                  <TableCell className={classes.row}>
+                    <Avatar className={classes.avatar} src={n.icon}>
+                    </Avatar>
                     {n.title}
                   </TableCell>
                   <TableCell numeric>
                     {n.id}
                   </TableCell>
                   <TableCell numeric>
-                    {n.albumId}
+                    {n.category}
+                    
                   </TableCell>
                 </TableRow>
               );
