@@ -6,7 +6,7 @@ import Header from './header/header';
 import DocumentSort from './DocumentSort';
 
 //const docsUrl = 'https://jsonplaceholder.typicode.com/photos';
-const documentsUrl = 'http://localhost:3000/documents';
+const documentsUrl = '/documents';
 
 class Main extends Component {
  
